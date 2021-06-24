@@ -1,6 +1,14 @@
 Discount Store
 
-Implement the code for a discount store checkout that calculates the total price of all items. Goods are priced individually, however there are special offers from time to time when multiple items are bought. For example: “Big mug is 1€ or 2 for 1.5€”.
+Implement the code for a discount store checkout that calculates the total price of all items. Goods are priced individually, however there are special offers from time to time when multiple items are bought. For example:
+<table>
+    <tr>
+        <td>SKU</td>
+        <td>Price</td>
+        <td>Discount</td>
+    </tr>
+</table
+“Big mug is 1€ or 2 for 1.5€”.
 SKU	Price	Discount
 Vase	1.2€	
 Big mug	1€	2 for 1.5€
