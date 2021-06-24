@@ -29,7 +29,7 @@ namespace Application.UnitTests
             get
             {
                 yield return new TestCaseData(DataSample.Get_Item_With_2_Number_Of_BigMug())
-                    .SetName("Get_Items_With_2_Number_Of_BigMug").SetDescription("calculate items total with 2 number of BigMug");
+                    .SetName("Test the calculation of the total cost with a discount on two BigMug pieces");
 
             }
         }
@@ -38,7 +38,7 @@ namespace Application.UnitTests
             get
             {
                 yield return new TestCaseData(DataSample.Get_Item_With_2_Number_Of_NapkinsPack())
-                    .SetName("Get_Items_With_3Count_Of_Each_Product").SetDescription("calculate items total with 2 number of NapkinsPack");
+                    .SetName("Test the calculation of the total cost with a discount on two Napkins Pack pieces");
             }
         }
         public static IEnumerable<TestCaseData> TestCase_Item_With_2_Number_Of_Vase
@@ -46,7 +46,7 @@ namespace Application.UnitTests
             get
             {
                 yield return new TestCaseData(DataSample.Get_Item_With_1_Number_Of_Vase())
-                    .SetName("Get_Items_With_1_Number_Of_Each_Product").SetDescription("calculate items total with 1 number of Vase");
+                    .SetName("Test the calculation of the total cost with a discount on one Vase pieces");
             }
         }
 
