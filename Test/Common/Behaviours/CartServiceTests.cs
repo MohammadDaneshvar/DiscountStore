@@ -80,5 +80,6 @@ namespace Test
             var total = productItem.Count * productItem.Product.Price * discountPercent;
             Assert.AreEqual(totalFromServie, total);
         }
+       
     }
 }
