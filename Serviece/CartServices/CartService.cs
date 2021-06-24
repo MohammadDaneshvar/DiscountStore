@@ -34,16 +34,16 @@ namespace Serviece.CartServices
             return items;        }
 
         public decimal GetTotal()
-         => items.Aggregate(0M, (acc, i) =>
+         => items.Aggregate(0M, (sum, item) =>
          {
              discountableStrategies.ToList().ForEach(d =>
              {
-                 if (d.IsSatisfied(i))
+                 if (d.IsSatisfied(item))
                  {
-                     acc = acc + d.Calculate(i);
+                     sum = sum + d.Calculate(item);
                  }
              });
-             return acc;
+             return sum;
          });
 
         public void Remove(Item item)
