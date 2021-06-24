@@ -1,5 +1,6 @@
 ﻿using Domain;
 using Servieces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,7 +12,13 @@ namespace Serviece.CartServices
         List<Item> items=new List<Item>();
         public CartService()
         {
-            discountableStrategies = new List<IDiscountable> { new VaseDiscount(),new NapkinspackDiscount(),new BigMugDiscount() };
+            var interfaceType = typeof(IDiscountable);
+            discountableStrategies = AppDomain.CurrentDomain.GetAssemblies()
+              .SelectMany(x => x.GetTypes())
+              .Where(x => interfaceType.IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
+              .Select(x =>(IDiscountable) Activator.CreateInstance(x));
+
+            
         }
         public void Add(Item item)
         {
